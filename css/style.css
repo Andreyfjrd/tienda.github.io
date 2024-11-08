@@ -1,10 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+h2, h3, p, span, .promo-bar, nav a {
+    color: #333;
+}
+
+.product-item img {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.product-item img:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
 /* Barra de promoción */
 .promo-bar {
-    background-color: #ff0000;
-    color: white;
+    background-color: #FF4D4D; /* Rojo vibrante para captar la atención */
+    color: #fff;
     text-align: center;
-    padding: 10px;
-    font-weight: bold;
+    padding: 15px 0;
+    font-weight: 700;
+    font-size: 1.2em;
+    letter-spacing: 1px;
+    position: fixed; /* Hace que la barra esté fija en la parte superior */
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+}
+
+.promo-bar {
+    animation: blink 1.5s infinite alternate;
+}
+
+@keyframes blink {
+    0% { background-color: #FF4D4D; }
+    100% { background-color: #FF6F6F; } /* Ligero cambio de tono de rojo */
+}
+
+main {
+    margin-top: 70px; /* Ajuste para evitar que el contenido se superponga a la barra */
 }
 
 /* Encabezado y búsqueda */
@@ -74,30 +112,26 @@ aside ul li a {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
-    width: 100%;
+    padding: 20px;
+    text-align: center;
 }
 
 .product-item {
-    text-align: center;
     border: 1px solid #ddd;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-.product-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-    margin-bottom: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 15px;
 }
 
 .product-item p {
-    font-size: 14px;
-    color: #333;
+    margin-top: 10px;
+    font-weight: 400;
+    color: #555;
 }
 
 .product-item span {
-    font-size: 16px;
-    color: black;
-    font-weight: bold;
+    display: block;
+    margin-top: 5px;
+    font-weight: 600;
+    color: #333;
 }
